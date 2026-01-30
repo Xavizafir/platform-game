@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dm08f5edokqtc"]
+
+[ext_resource type="Texture2D" uid="uid://bx4nb02mi6my5" path="res://assets/TILESETGGJ/village desain.png" id="1_274mx"]
+
+[node name="Node2D" type="Parallax2D" unique_id=1458675331]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997073555]
+texture = ExtResource("1_274mx")
+centered = false
