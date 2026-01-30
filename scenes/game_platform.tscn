@@ -633,6 +633,7 @@ shape = SubResource("WorldBoundaryShape2D_7cmjv")
 [node name="Platform" type="Node" parent="." unique_id=363293596]
 
 [node name="Platform" parent="Platform" unique_id=621095497 instance=ExtResource("8_h3wpr")]
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1299, 9)
 scale = Vector2(0.031045355, 0.0063453857)
 
@@ -653,69 +654,69 @@ text = "Press \"space\" to Jump
 "
 
 [node name="Node2D" parent="." unique_id=1458675331 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(-281, -196)
 
 [node name="Node2D2" parent="." unique_id=777162383 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(407, -196)
 
 [node name="Node2D3" parent="." unique_id=140056203 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(1093, -196)
 
 [node name="Node2D4" parent="." unique_id=1777752950 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(1779, -196)
 
 [node name="Node2D5" parent="." unique_id=1325870546 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(408, 341)
 
 [node name="Node2D6" parent="." unique_id=960715836 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(1096, 341)
 
 [node name="Node2D7" parent="." unique_id=357546746 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(1782, 341)
 
 [node name="Node2D8" parent="." unique_id=1741047516 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(2468, 341)
 
 [node name="Node2D9" parent="." unique_id=959288138 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(406, -195)
 
 [node name="Node2D10" parent="." unique_id=127668423 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(1094, -195)
 
 [node name="Node2D11" parent="." unique_id=367448886 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(1780, -195)
 
 [node name="Node2D12" parent="." unique_id=680008436 instance=ExtResource("10_5f60x")]
-modulate = Color(0.59607846, 0.6392157, 0.84705883, 0.6862745)
+modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
 rotation = 3.1415927
 scale = Vector2(0.104270995, 0.14992009)
 scroll_offset = Vector2(2466, -195)

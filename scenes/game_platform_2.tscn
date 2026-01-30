@@ -170,7 +170,7 @@ _data = {
 [node name="game_platform2" type="Node2D" unique_id=1700564844]
 
 [node name="Player" parent="." unique_id=2041024817 instance=ExtResource("1_durxi")]
-position = Vector2(1849, -197)
+position = Vector2(1823, -195)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1710863265]
 zoom = Vector2(4, 4)
@@ -661,67 +661,67 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_j4uih")
 
 [node name="BackGround2" parent="." unique_id=1854000418 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(254, 21.999992)
 
 [node name="BackGround3" parent="." unique_id=321230903 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1090.9999, 21.999992)
 
 [node name="BackGround4" parent="." unique_id=1194143590 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1932.9999, 21.999992)
 
 [node name="BackGround5" parent="." unique_id=1680283764 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 rotation = 3.1415927
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(254.00012, 195)
 
 [node name="BackGround6" parent="." unique_id=1816810553 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 rotation = 3.1415927
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1091, 195)
 
 [node name="BackGround7" parent="." unique_id=358948779 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 rotation = 3.1415927
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1933, 195)
 
 [node name="BackGround8" parent="." unique_id=169255875 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 rotation = 3.1415927
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(254.00012, -152.00002)
 
 [node name="BackGround9" parent="." unique_id=580853638 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 rotation = 3.1415927
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1091, -152.00002)
 
 [node name="BackGround10" parent="." unique_id=1313680035 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 rotation = 3.1415927
 scale = Vector2(0.12761222, 0.09690354)
-scroll_offset = Vector2(1933, -152.00002)
+scroll_offset = Vector2(1933, -152)
 
 [node name="BackGround11" parent="." unique_id=199620265 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(254.00012, -321)
 
 [node name="BackGround12" parent="." unique_id=1268952516 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1091, -321)
 
 [node name="BackGround13" parent="." unique_id=2126041512 instance=ExtResource("7_j4uih")]
-modulate = Color(0.47918278, 0.47918278, 0.47918278, 0.6862745)
+modulate = Color(0.55220705, 0.31363314, 0.4578175, 1)
 scale = Vector2(0.12761222, 0.09690354)
 scroll_offset = Vector2(1933, -321)
