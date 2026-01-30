@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmj73losix5pl"]
+
+[ext_resource type="Texture2D" uid="uid://cpvksk4b0ht3w" path="res://assets/TILESETGGJ/Duri.PNG" id="1_ruut0"]
+[ext_resource type="PackedScene" uid="uid://bldytq7jy4uwb" path="res://scenes/killzone.tscn" id="2_gr2ix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abf21"]
+size = Vector2(583, 83)
+
+[node name="Duri" type="Node2D" unique_id=334099574]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=726909048]
+texture = ExtResource("1_ruut0")
+
+[node name="Killzone" parent="." unique_id=197166725 instance=ExtResource("2_gr2ix")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1997280957]
+position = Vector2(11, -18)
+shape = SubResource("RectangleShape2D_abf21")
