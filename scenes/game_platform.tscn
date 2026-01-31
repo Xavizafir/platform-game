@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhpfn8sxlux1i"]
 
 [ext_resource type="PackedScene" uid="uid://tf3y4y6h8ftd" path="res://scenes/player.tscn" id="1_0yiip"]
+[ext_resource type="Texture2D" uid="uid://bx4nb02mi6my5" path="res://assets/TILESETGGJ/village desain.png" id="1_5f60x"]
 [ext_resource type="PackedScene" uid="uid://bldytq7jy4uwb" path="res://scenes/killzone.tscn" id="2_jvifr"]
 [ext_resource type="Texture2D" uid="uid://vh16g6uygn14" path="res://assets/TILESETGGJ/Untitled design - 2.png" id="3_jvifr"]
 [ext_resource type="Texture2D" uid="uid://2nylbnl830qa" path="res://assets/TILESETGGJ/Untitled design - 4.png" id="4_180tv"]
@@ -9,7 +10,23 @@
 [ext_resource type="PackedScene" uid="uid://doc8ahh50s4aj" path="res://scenes/platform.tscn" id="8_h3wpr"]
 [ext_resource type="PackedScene" uid="uid://cmj73losix5pl" path="res://scenes/duri.tscn" id="8_ufqn1"]
 [ext_resource type="FontFile" uid="uid://cilgp44vghbmb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_6xgow"]
-[ext_resource type="PackedScene" uid="uid://dm08f5edokqtc" path="res://scenes/Background.tscn" id="10_5f60x"]
+[ext_resource type="Script" uid="uid://6bmvlhdtdsbq" path="res://scripts/portal.gd" id="11_lcfhu"]
+[ext_resource type="Texture2D" uid="uid://jqjx5y2vuex8" path="res://assets/TILESETGGJ/portalbiru.PNG" id="12_tevrp"]
+[ext_resource type="AudioStream" uid="uid://f0lmgwsi0paa" path="res://assets/music/scene_2_Desa.ogg" id="13_tevrp"]
+
+[sub_resource type="GDScript" id="GDScript_lcfhu"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k2q3k"]
 
@@ -97,10 +114,63 @@ _data = {
 &"RESET": SubResource("Animation_5f60x")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1mbya"]
+radius = 150.58789
+height = 302.5918
+
 [node name="GamePlatform" type="Node2D" unique_id=788714876]
+script = SubResource("GDScript_lcfhu")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=852088485]
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=51665407]
+position = Vector2(0, -28)
+scale = Vector2(0.854265, 0.7586162)
+motion_scale = Vector2(0.1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1642714832]
+modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+scale = Vector2(0.06772925, 0.13485186)
+texture = ExtResource("1_5f60x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=600122359]
+modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+position = Vector2(443.65628, 0)
+scale = Vector2(0.06772925, 0.13485186)
+texture = ExtResource("1_5f60x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1026618043]
+modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+position = Vector2(886.14197, 0)
+scale = Vector2(0.06772925, 0.13485186)
+texture = ExtResource("1_5f60x")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1233147503]
+modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+position = Vector2(1332.1394, 0)
+scale = Vector2(0.06772925, 0.13485186)
+texture = ExtResource("1_5f60x")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=647117607]
+modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+position = Vector2(1774.6251, 0)
+scale = Vector2(0.06772925, 0.13485186)
+texture = ExtResource("1_5f60x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=332006814]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=490949128]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." unique_id=2041024817 instance=ExtResource("1_0yiip")]
-position = Vector2(50, -37)
+position = Vector2(36, -30)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1389177767]
 position = Vector2(0, -1)
@@ -117,7 +187,7 @@ shape = SubResource("WorldBoundaryShape2D_k2q3k")
 [node name="Ground" type="Node" parent="." unique_id=478273916]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground" unique_id=1354743594]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(50, 13)
 scale = Vector2(1.2400012, 1)
 
@@ -130,7 +200,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Ground" unique_id=1581463383]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(158, 13)
 scale = Vector2(1.2400012, 1)
 
@@ -143,7 +213,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Ground" unique_id=1617914470]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(267, 13)
 scale = Vector2(1.2400012, 1)
 
@@ -156,7 +226,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Ground" unique_id=1867250827]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(240, -65)
 scale = Vector2(1.2400012, 1)
 
@@ -169,7 +239,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Ground" unique_id=307784491]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(358, 24)
 scale = Vector2(1.0597981, 0.8228525)
 
@@ -182,7 +252,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Ground" unique_id=711429509]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(417.99997, 17)
 scale = Vector2(0.82313037, 1.7289283)
 
@@ -195,7 +265,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Ground" unique_id=138924366]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(569, 53.000004)
 scale = Vector2(3.9455671, 1.2687625)
 
@@ -208,7 +278,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Ground" unique_id=153887176]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(522, -6.0000005)
 scale = Vector2(0.60463464, 0.41955733)
 
@@ -221,7 +291,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Ground" unique_id=1720887354]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(616, -6.0000005)
 scale = Vector2(0.60463464, 0.41955733)
 
@@ -234,7 +304,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Ground" unique_id=1214466162]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(711, -6.0000005)
 scale = Vector2(0.60463464, 0.41955733)
 
@@ -247,7 +317,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Ground" unique_id=2144599610]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(780.00006, 17)
 scale = Vector2(1.0165431, 1.5872507)
 
@@ -260,8 +330,8 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Ground" unique_id=1737340973]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
-position = Vector2(457, -120.99999)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
+position = Vector2(461, -121)
 scale = Vector2(1.4447683, 1.1398427)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/StaticBody2D12" unique_id=418653669]
@@ -273,7 +343,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Ground" unique_id=1598269024]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(583, -121)
 scale = Vector2(1.7367201, 1.1398426)
 
@@ -286,7 +356,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Ground" unique_id=1381047019]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(674, -120.999985)
 scale = Vector2(0.68600976, 1.1244264)
 
@@ -299,7 +369,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D32" type="StaticBody2D" parent="Ground" unique_id=428299838]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(674, -148)
 scale = Vector2(0.68600976, 1.1244264)
 
@@ -312,7 +382,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k2q3k")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Ground" unique_id=805188516]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(778.00006, -33)
 scale = Vector2(0.5824302, 0.37946314)
 
@@ -326,7 +396,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="Ground" unique_id=1647471581]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(777, -63)
 scale = Vector2(0.5824302, 0.37946314)
 
@@ -340,7 +410,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="Ground" unique_id=962566131]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(777, -91)
 scale = Vector2(0.5824302, 0.37946314)
 
@@ -354,7 +424,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="Ground" unique_id=865876985]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(882, -40)
 scale = Vector2(6.1349897, 8.51584)
 
@@ -367,7 +437,7 @@ position = Vector2(-1.3334045, 0.5895972)
 shape = SubResource("RectangleShape2D_6xgow")
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="Ground" unique_id=1502945625]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(964, -68)
 rotation = 0.22097299
 scale = Vector2(0.5824302, 0.37946314)
@@ -382,7 +452,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="Ground" unique_id=1775512818]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1020, -8)
 rotation = -0.08497806
 scale = Vector2(0.5824302, 0.37946314)
@@ -397,7 +467,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="Ground" unique_id=557662214]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1061, -85)
 rotation = -0.19645989
 scale = Vector2(0.5824302, 0.37946314)
@@ -412,10 +482,10 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="Ground" unique_id=368377539]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
-position = Vector2(1107.9999, -35.000004)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
+position = Vector2(1102.9999, -41.00005)
 rotation = 0.2793893
-scale = Vector2(0.6705433, 0.3641217)
+scale = Vector2(0.51786745, 0.3288096)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/StaticBody2D22" unique_id=647250355]
 scale = Vector2(0.046537116, 0.013840967)
@@ -427,7 +497,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D23" type="StaticBody2D" parent="Ground" unique_id=1696893399]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1103, 34.000004)
 rotation = -0.035001755
 scale = Vector2(0.6705433, 0.3641217)
@@ -442,7 +512,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="Ground" unique_id=1296372324]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1209, 11.999998)
 rotation = -0.00683734
 scale = Vector2(0.97308064, 0.3322864)
@@ -457,7 +527,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D25" type="StaticBody2D" parent="Ground" unique_id=1303123111]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1563, 11.999998)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -472,7 +542,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D26" type="StaticBody2D" parent="Ground" unique_id=686436618]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1655.0001, 11.999998)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -487,7 +557,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D27" type="StaticBody2D" parent="Ground" unique_id=1596234232]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1746.0001, 11.999998)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -502,7 +572,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D28" type="StaticBody2D" parent="Ground" unique_id=276174196]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(1833.0002, 11.999998)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -517,7 +587,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D29" type="StaticBody2D" parent="Ground" unique_id=466437707]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(-50.000008, 14)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -532,7 +602,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D30" type="StaticBody2D" parent="Ground" unique_id=943554657]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(-141, 14)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -547,7 +617,7 @@ shape = SubResource("RectangleShape2D_k2q3k")
 one_way_collision = true
 
 [node name="StaticBody2D31" type="StaticBody2D" parent="Ground" unique_id=282874508]
-modulate = Color(0.36918294, 0.49206048, 0.7963593, 1)
+modulate = Color(0.36862746, 0.49019608, 0.79607844, 1)
 position = Vector2(-233.00002, 14)
 rotation = -0.00683734
 scale = Vector2(1.0494931, 1.0426683)
@@ -596,15 +666,15 @@ scale = Vector2(0.11988626, 0.17554305)
 
 [node name="Duri7" parent="Spikes" unique_id=2107299122 instance=ExtResource("8_ufqn1")]
 modulate = Color(0.69708455, 0.75517064, 0.86717004, 1)
-position = Vector2(1107, -27.99997)
+position = Vector2(1102, -34.000015)
 rotation = -2.8511362
-scale = Vector2(0.09695455, 0.12914446)
+scale = Vector2(0.074878946, 0.11662022)
 
 [node name="Duri8" parent="Spikes" unique_id=54102424 instance=ExtResource("8_ufqn1")]
 modulate = Color(0.69708455, 0.75517064, 0.86717004, 1)
-position = Vector2(1109, -41.999954)
+position = Vector2(1104, -48)
 rotation = -5.992959
-scale = Vector2(0.09695455, 0.12914446)
+scale = Vector2(0.07487898, 0.11662022)
 
 [node name="Duri10" parent="Spikes" unique_id=1623664997 instance=ExtResource("8_ufqn1")]
 modulate = Color(0.79312927, 0.6988829, 0.600893, 1)
@@ -653,70 +723,21 @@ theme_override_font_sizes/font_size = 10
 text = "Press \"space\" to Jump
 "
 
-[node name="Node2D" parent="." unique_id=1458675331 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(-281, -196)
+[node name="Portal" type="Area2D" parent="." unique_id=1979177360]
+position = Vector2(1606.0001, -15)
+scale = Vector2(0.059764806, 0.085924335)
+script = ExtResource("11_lcfhu")
+target_scene = "res://scenes/game_platform_2.tscn"
 
-[node name="Node2D2" parent="." unique_id=777162383 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(407, -196)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=99465039]
+position = Vector2(-0.0020425117, -34.91444)
+shape = SubResource("CapsuleShape2D_1mbya")
 
-[node name="Node2D3" parent="." unique_id=140056203 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(1093, -196)
+[node name="Sprite2D" type="Sprite2D" parent="Portal" unique_id=1003545098]
+texture = ExtResource("12_tevrp")
 
-[node name="Node2D4" parent="." unique_id=1777752950 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(1779, -196)
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=2054761323]
+stream = ExtResource("13_tevrp")
+autoplay = true
 
-[node name="Node2D5" parent="." unique_id=1325870546 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(408, 341)
-
-[node name="Node2D6" parent="." unique_id=960715836 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(1096, 341)
-
-[node name="Node2D7" parent="." unique_id=357546746 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(1782, 341)
-
-[node name="Node2D8" parent="." unique_id=1741047516 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(2468, 341)
-
-[node name="Node2D9" parent="." unique_id=959288138 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(406, -195)
-
-[node name="Node2D10" parent="." unique_id=127668423 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(1094, -195)
-
-[node name="Node2D11" parent="." unique_id=367448886 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(1780, -195)
-
-[node name="Node2D12" parent="." unique_id=680008436 instance=ExtResource("10_5f60x")]
-modulate = Color(0.34442797, 0.37646893, 0.689972, 1)
-rotation = 3.1415927
-scale = Vector2(0.104270995, 0.14992009)
-scroll_offset = Vector2(2466, -195)
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
