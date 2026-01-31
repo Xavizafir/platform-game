@@ -2,12 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://tf3y4y6h8ftd" path="res://scenes/player.tscn" id="1_durxi"]
 [ext_resource type="PackedScene" uid="uid://bldytq7jy4uwb" path="res://scenes/killzone.tscn" id="2_ug0xf"]
-[ext_resource type="Texture2D" uid="uid://df4qwjw7cu7j3" path="res://assets/TILESETGGJ/Untitled design - 6.png" id="3_qoep7"]
+[ext_resource type="Texture2D" uid="uid://cosbx4gf6sj78" path="res://assets/TILESETGGJ/Tembok .png" id="3_5iuhl"]
 [ext_resource type="Texture2D" uid="uid://vh16g6uygn14" path="res://assets/TILESETGGJ/Untitled design - 2.png" id="3_uo70v"]
 [ext_resource type="PackedScene" uid="uid://cmj73losix5pl" path="res://scenes/duri.tscn" id="4_ug0xf"]
 [ext_resource type="PackedScene" uid="uid://doc8ahh50s4aj" path="res://scenes/platform.tscn" id="5_uo70v"]
 [ext_resource type="Texture2D" uid="uid://ddsdaculejabp" path="res://assets/TILESETGGJ/dungeon desain.png" id="7_j4uih"]
 [ext_resource type="AudioStream" uid="uid://d2cec65ed30xw" path="res://assets/music/scene_3_Dungeon.ogg" id="8_o3m3m"]
+[ext_resource type="Texture2D" uid="uid://jqjx5y2vuex8" path="res://assets/TILESETGGJ/portalbiru.PNG" id="9_5iuhl"]
+[ext_resource type="Texture2D" uid="uid://dyewod346sy5b" path="res://assets/TILESETGGJ/portalpink.PNG" id="10_a4phe"]
+[ext_resource type="Script" uid="uid://b6v1inw0xvirg" path="res://scripts/portal_2.gd" id="10_rc0rx"]
 
 [sub_resource type="GDScript" id="GDScript_5iuhl"]
 
@@ -26,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1732.9999, -63.999996)]
+"values": [Vector2(1729, -63.999996)]
 }
 
 [sub_resource type="Animation" id="Animation_a4phe"]
@@ -43,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1732.9999, -63.999996), Vector2(1732.9999, -63.999996), Vector2(1601, -63.999996)]
+"values": [Vector2(1729, -63.999996), Vector2(1729, -63.999996), Vector2(1610.0001, -63.999996)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rc0rx"]
@@ -64,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1732.9999, -96)]
+"values": [Vector2(1729, -96)]
 }
 
 [sub_resource type="Animation" id="Animation_4yys4"]
@@ -81,7 +84,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1732.9999, -96), Vector2(1732.9999, -96), Vector2(1617, -96)]
+"values": [Vector2(1729, -96), Vector2(1729, -96), Vector2(1613.0001, -96)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ugtpc"]
@@ -170,11 +173,13 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j4uih"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rc0rx"]
+
 [node name="game_platform2" type="Node2D" unique_id=1700564844]
 script = SubResource("GDScript_5iuhl")
 
 [node name="Player" parent="." unique_id=2041024817 instance=ExtResource("1_durxi")]
-position = Vector2(69, 11)
+position = Vector2(69, 8)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1710863265]
 zoom = Vector2(4, 4)
@@ -504,12 +509,13 @@ one_way_collision = true
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="Ground" unique_id=602364038]
 modulate = Color(1, 0.4122307, 0.9676927, 1)
-position = Vector2(1759.0001, -81)
+position = Vector2(1754, -80)
 scale = Vector2(0.5437824, 4.7513905)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/StaticBody2D21" unique_id=1283774389]
-scale = Vector2(0.046537116, 0.013840967)
-texture = ExtResource("3_qoep7")
+position = Vector2(7.3556585, -0.8418588)
+scale = Vector2(0.25399598, 0.022643685)
+texture = ExtResource("3_5iuhl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D21" unique_id=1720699598]
 position = Vector2(0, 0.5)
@@ -604,21 +610,21 @@ scale = Vector2(0.05860987, 0.17112145)
 
 [node name="Duri7" parent="Spikes" unique_id=1501104714 instance=ExtResource("4_ug0xf")]
 modulate = Color(1, 0.6960905, 0.6782975, 1)
-position = Vector2(1732.9999, -63.999996)
+position = Vector2(1729, -63.999996)
 rotation = -1.5707964
 scale = Vector2(0.03174716, 0.093709074)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spikes/Duri7" unique_id=402777881]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spikes/Duri7" unique_id=544501475]
 libraries/ = SubResource("AnimationLibrary_rc0rx")
 autoplay = &"move"
 
 [node name="Duri8" parent="Spikes" unique_id=890576001 instance=ExtResource("4_ug0xf")]
 modulate = Color(1, 0.6960905, 0.6782975, 1)
-position = Vector2(1732.9999, -96)
+position = Vector2(1729, -96)
 rotation = -1.5707964
 scale = Vector2(0.03174716, 0.093709074)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spikes/Duri8" unique_id=1454967410]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spikes/Duri8" unique_id=1387229605]
 libraries/ = SubResource("AnimationLibrary_ugtpc")
 autoplay = &"move"
 
@@ -715,3 +721,35 @@ texture = ExtResource("7_j4uih")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1972860553]
 stream = ExtResource("8_o3m3m")
 autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=796544942]
+position = Vector2(53, 23.999998)
+scale = Vector2(0.07522422, 0.13449663)
+texture = ExtResource("9_5iuhl")
+
+[node name="Portal2" type="Area2D" parent="." unique_id=547379460]
+position = Vector2(1855, -178)
+scale = Vector2(0.0924961, 0.14638063)
+script = ExtResource("10_rc0rx")
+target_scene = "res://scenes/game_platform.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal2" unique_id=2067506157]
+texture = ExtResource("10_a4phe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2" unique_id=187247723]
+position = Vector2(0, -27.32602)
+scale = Vector2(14.149072, 11.116602)
+shape = SubResource("CapsuleShape2D_rc0rx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1488884124]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=804853710]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="Portal2" to="Portal2" method="_on_body_entered"]

@@ -727,7 +727,7 @@ text = "Press \"space\" to Jump
 position = Vector2(1606.0001, -15)
 scale = Vector2(0.059764806, 0.085924335)
 script = ExtResource("11_lcfhu")
-target_scene = "res://scenes/game_platform_2.tscn"
+target_scene = "res://scenes/Game_match3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=99465039]
 position = Vector2(-0.0020425117, -34.91444)
