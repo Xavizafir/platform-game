@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://uoideir0vs6k"]
+
+[ext_resource type="Texture2D" uid="uid://dofl1csmctwgg" path="res://match3_art/victory desain2.png" id="1_4io76"]
+[ext_resource type="Script" uid="uid://vx2p8c1376fm" path="res://scripts/win_match_3.gd" id="1_p68lb"]
+[ext_resource type="AudioStream" uid="uid://c7kn61wv5lmr3" path="res://assets/music/Win.ogg" id="3_nv0bv"]
+
+[node name="WinMatch3" type="Control" unique_id=1450901246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p68lb")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1944841936]
+texture_filter = 1
+scale = Vector2(3.4, 3.5555556)
+texture = ExtResource("1_4io76")
+centered = false
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1553513752]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2002090303]
+stream = ExtResource("3_nv0bv")
+autoplay = true
